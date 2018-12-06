@@ -1,2 +1,45 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= form_for(@user) do |f| %>
+<div class="head-line">
+  <h1>プロフィール編集</h1>
+  
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-8">
+    <table class="table table-bordered table-profile">
+      <tbody>
+        
+        <tr>
+          <th class="table-header col-xs-4 text-center">名前</th>
+          <td class="table-body col-xs-8">
+            <%= f.text_field :name, class: 'form-control' %>
+            </td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">メールアドレス</th>
+          <td class="table-body col-xs-8">
+            <%= f.email_field :email, class: 'form-control' %>
+          </td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">パスワード</th>
+          <td class="table-body col-xs-8">
+            <%= f.password_field :password, class: 'form-control' %>
+          </td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">パスワード(確認)</th>
+          <td class="table-body col-xs-8">
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <%= hidden_field_tag :password, current_user.password %>
+    <%= hidden_field_tag :password_confirmation, current_user.password %>
+    <%= f.submit "更新する", class:"btn btn-success"%>
+    <button type="button" class="btn btn-danger"><%= link_to "キャンセル", user_path(current_user), :class =>"href-btn" %></button>
+    </div>
+</div>
+<% end %>

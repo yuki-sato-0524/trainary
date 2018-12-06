@@ -1,0 +1,8 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %> text-center fade-out-flash">
+    <%= message %><span class="" aria-hidden="true"></span>
+    <div id="close-flash">
+      <span class="glyphicon glyphicon-remove"></span>
+    </div>
+    </div>
+<% end %>

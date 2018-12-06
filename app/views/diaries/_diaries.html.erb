@@ -1,0 +1,36 @@
+<div class="row">
+  <% diaries.each do |diary| %>
+  <div class="col-sm-4">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h2 class="text-center">記録（<%= diary.id %>）</h2>
+          </div>
+          <div class="panel-body">
+            <div>
+              <h4>日付</h4>
+              <p><%= diary.month %>月<%= diary.date %>日</p>
+            </div>
+            <div>
+              <h4>記録内容</h4>
+              <p><%= diary.content %></p>
+            </div>
+            <div>
+              <h4>体重</h4>
+              <p><%= diary.weight %>kg</p>
+            </div>
+            <div>
+              <h4>プロテイン量</h4>
+              <p><%= diary.protein %>g</p>
+            </div>
+          </div>
+          <div style="margin-bottom:8px; margin-left:8px;">
+              <button type="button" class="btn btn-success"><%= link_to "編集", edit_diary_path(diary),:class => "href-btn" %></button>
+              <button type="button" class="btn btn-danger"><%= link_to "削除", diary_path(diary), method: :delete, :class => "href-btn", data: {confirm: "削除してもよろしいですか？？"} %></button>
+            </div>
+        </div>
+      </div>
+      <% end %>
+</div>
+<div class="text-center">
+  <%= paginate diaries %>
+</div>

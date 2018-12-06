@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   delete "logout"=>"sessions#destroy"
   
   get "signup" => "users#new"
-  resources :users, :except => [:index,:new]
+  resources :users, :only => [:show, :create, :destroy, :edit, :update]
   
+  
+  get "analysis" => "diaries#analysis"
+  resources :diaries, :only => [:new, :create, :destroy, :edit, :update, :index]
+  
+  resources :goals, :only =>[:new, :create, :edit, :update]
   
   
   

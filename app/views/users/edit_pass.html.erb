@@ -1,0 +1,26 @@
+<%= form_for(user_path(@user)) do |f| %>
+<div class="head-line">
+  <h1>パスワード編集</h1>
+  
+</div>
+
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-8">
+    <table class="table table-bordered table-profile">
+      <tbody>
+        
+        <tr>
+          <th class="table-header col-xs-4 text-center">パスワード</th>
+          <td class="table-body col-xs-8">
+            <%= f.password_field :password, class: 'form-control' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <%= f.submit "更新する", class:"btn btn-success"%>
+  <button type="button" class="btn btn-danger"><%= link_to "キャンセル", user_path(current_user), :class =>"href-btn" %></button>
+    </div>
+</div>
+<% end %>

@@ -1,0 +1,58 @@
+<div id="mask" class="hidden"></div>
+<div id="modal-diary" class="hidden">
+  <div class="panel panel-info panel-form">
+    <div class="panel-heading">
+      <h1 class="text-center">Trainary（筋トレ日記）</h1>
+    </div>
+    <div class="panel-body">
+    
+      <%= form_for diary, :html => {:class => "form-horizontal"} do |f| %>
+        <div class="form-group">
+          <label class="control-label col-xs-2">日付</label>
+          <div class="col-xs-3">
+            <%= f.number_field :month, class: "form-control col-xs-3"%>
+          </div>
+          <div class="col-xs-1 col-div">
+            <p>月</p>
+          </div>
+          <div class="col-xs-3">
+            <%= f.number_field :date, class: "form-control col-xs-3"%>
+          </div>
+          <div class="col-xs-1 col-div">
+            <p>日</p>
+          </div>
+        </div>
+        <div class="form-group col-xs-12">
+          <%= f.text_area :content, class:"form-control", placeholder: "今日の記録を記入する。", rows: 8 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :weight, "体重", class: "control-label col-xs-3" %>
+          <div class="col-xs-6">
+            <%= f.number_field :weight, class: "form-control", id:"form-weight" %>
+            <div id="num-error-w" class="error-inactive">半角数字のみ使用可能！</div>
+          </div>
+          <div class="col-xs-3 col-div">
+            <p>kg</p>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :protein, "摂取プロテイン",  class:"control-label col-xs-3"%>
+          <div class="col-xs-6">
+            <%= f.number_field :protein, class: "form-control", id:"form-protein"%>
+            <div id="num-error-p" class="error-inactive">半角数字のみ使用可能！</div>
+          </div>
+          <div class="col-xs-3 col-div">
+            <p>g</p>
+          </div>
+        </div>
+        <div>
+          <%= f.submit "記録する！", class: "btn btn-block btn-extend", id:"form-btn" %>
+        </div>
+      <% end %>
+    </div>
+    <div id="close-modal-diary">
+      <span class="glyphicon glyphicon-remove"></span>
+    </div>
+  </div>
+</div>

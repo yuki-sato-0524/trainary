@@ -1,2 +1,51 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1 class="head-line">プロフィール</h1>
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-8">
+    <table class="table table-bordered table-profile">
+      <tbody>
+        <tr>
+          <th class="table-header col-xs-4 text-center">名前</th>
+          <td class="table-body col-xs-8"><%= current_user.name %></td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">メールアドレス</th>
+          <td class="table-body col-xs-8"><%= current_user.email %></td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">パスワード</th>
+          <td class="table-body col-xs-8">[非公開]</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success"><%= link_to "編集", edit_user_path(@user), {:class => "href-btn"} %></button>
+  </div>
+</div>
+
+<h1 class="head-line">目標</h1>
+<div class="row">
+  <div class="col-sm-offset-2 col-sm-8">
+    <table class="table table-bordered table-profile">
+      <tbody>
+        <tr>
+          <th class="table-header col-xs-4 text-center">設定日</th>
+          <td class="table-body col-xs-8"><% %></td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">目標体重</th>
+          <td class="table-body col-xs-8"></td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">目標摂取プロテイン（1日分）</th>
+          <td class="table-body col-xs-8"></td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">メモ</th>
+          <td class="table-body col-xs-8"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success"><%= link_to "編集", edit_goal_path(@goal), {:class => "href-btn"} %></button>
+  </div>
+</div>
+<h1 class="head-line">退会</h1>
+<button type="button" class="btn btn-danger"><%= link_to "退会する", user_path(current_user), :class =>"href-btn", method: :delete, data: {confirm: "本当に退会しますか？"}%>

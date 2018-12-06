@@ -1,0 +1,62 @@
+<div class="col-sm-offset-3 col-sm-6">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h1 class="text-center">目標設定</h1>
+    </div>
+    <div class="panel-body">
+    
+      <%= form_for @goal, :html => {:class => "form-horizontal"} do |f| %>
+        <div class="form-group">
+          <label class="control-label col-xs-3">達成予定日</label>
+          <div class="col-xs-3">
+            <%= f.number_field :year, class: "form-control col-xs-3"%>
+          </div>
+          <div class="col-xs-1 col-div">
+            <p>年</p>
+          </div>
+          <div class="col-xs-2">
+            <%= f.number_field :month, class: "form-control col-xs-3"%>
+          </div>
+          <div class="col-xs-1 col-div">
+            <p>月</p>
+          </div>
+          <div class="col-xs-2">
+            <%= f.number_field :date, class: "form-control col-xs-3"%>
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <%= f.label :goal_weight, "目標体重", class: "control-label col-xs-3" %>
+          <div class="col-xs-6">
+            <%= f.number_field :goal_weight, class: "form-control", id:"form-weight" %>
+            <div id="num-error-w" class="error-inactive">半角数字のみ使用可能！</div>
+          </div>
+          <div class="col-xs-3 col-div">
+            <p>kg</p>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :goal_protein, "摂取プロテイン(day)",  class:"control-label col-xs-3"%>
+          <div class="col-xs-6">
+            <%= f.number_field :goal_protein, class: "form-control", id:"form-protein"%>
+            <div id="num-error-p" class="error-inactive">半角数字のみ使用可能！</div>
+          </div>
+          <div class="col-xs-3 col-div">
+            <p>g</p>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :goal_memo, "メモ",  class:"control-label col-xs-3"%>
+          <div class="col-xs-9">
+            <%= f.text_area :goal_memo, class:"form-control", placeholder: "", rows: 8 %>
+          </div>
+        </div>
+        <div>
+          <%= f.submit "設定する！", class: "btn btn-block btn-extend", id:"form-btn" %>
+        </div>
+      <% end %>
+    </div>
+    
+</div>
