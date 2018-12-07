@@ -27,20 +27,20 @@
     <table class="table table-bordered table-profile">
       <tbody>
         <tr>
-          <th class="table-header col-xs-4 text-center">設定日</th>
-          <td class="table-body col-xs-8"><% %></td>
+          <th class="table-header col-xs-4 text-center">達成予定日</th>
+          <td class="table-body col-xs-8"><%= @goal.year %>/<%= @goal.month %>/<%= @goal.date %></td>
         </tr>
         <tr>
           <th class="table-header col-xs-4 text-center">目標体重</th>
-          <td class="table-body col-xs-8"></td>
+          <td class="table-body col-xs-8"><%= @goal.goal_weight %></td>
         </tr>
         <tr>
           <th class="table-header col-xs-4 text-center">目標摂取プロテイン（1日分）</th>
-          <td class="table-body col-xs-8"></td>
+          <td class="table-body col-xs-8"><%= @goal.goal_protein %></td>
         </tr>
         <tr>
           <th class="table-header col-xs-4 text-center">メモ</th>
-          <td class="table-body col-xs-8"></td>
+          <td class="table-body col-xs-8"><%= simple_format(@goal.goal_memo) %></td>
         </tr>
       </tbody>
     </table>

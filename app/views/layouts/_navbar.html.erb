@@ -22,7 +22,7 @@
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to current_user.name, user_path(current_user) %></li>
+              <li><a href="#"><%= current_user.name %></a></li>
               <li class="divider" role="separator"></li>              
               <li><%= link_to "プロフィール", user_path(current_user) %></li>
               <li></li>

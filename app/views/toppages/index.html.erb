@@ -31,7 +31,7 @@
           <button type="button" class="btn btn-success"><%= link_to "編集", edit_diary_path(@diary_last),:class => "href-btn" %></button>
           <button type="button" class="btn btn-danger"><%= link_to "削除", diary_path(@diary_last), method: :delete, :class => "href-btn", data: {confirm: "削除してもよろしいですか？？"} %></button>
         </div>
-        </div>
+      </div>
     </div>
     
     
@@ -94,7 +94,7 @@
       </div>
       
     </div>
-    <% if current_user.goals.last %>
+    <% if @goal %>
     
       <div class="col-sm-3">
       <div class="panel panel-success">
@@ -103,20 +103,20 @@
         </div>
         <div class="panel-body">
           <div>
-            <h4>設定日</h4>
-            <p></p>
+            <h4>達成予定日</h4>
+            <p><%= @goal.year %>/<%= @goal.month %>/<%= @goal.date %></p>
           </div>
           <div>
             <h4>目標体重</h4>
-            <p><%= %>kg</p>
+            <p><%= @goal.goal_weight %>kg</p>
           </div>
           <div>
             <h4>プロテイン（一日）</h4>
-            <p><%=  %>g</p>
+            <p><%= @goal.goal_protein %>g</p>
           </div>
           <div>
             <h4>メモ</h4>
-            <p><%= @goal.goal_memo %></p>
+            <p><%= simple_format(@goal.goal_memo) %></p>
           </div>
           
         </div>

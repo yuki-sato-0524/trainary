@@ -3,8 +3,7 @@ class ToppagesController < ApplicationController
     if logged_in?
       @user = current_user
       @diary = @user.diaries.build
-      
-      @diary_last = @user.diaries.first
+      @diary_last = @user.diaries.last
       @goal = @user.goals.last
     else
       @user = User.new
