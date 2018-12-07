@@ -8,7 +8,7 @@ class GoalsController < ApplicationController
     
     if @goal.save
       flash[:success] = "目標を設定しました"
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else 
       flash[:danger] = "目標の設定に失敗しました"
       render :new

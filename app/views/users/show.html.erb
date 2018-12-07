@@ -24,6 +24,7 @@
 <h1 class="head-line">目標</h1>
 <div class="row">
   <div class="col-sm-offset-2 col-sm-8">
+    <% if @goal %>
     <table class="table table-bordered table-profile">
       <tbody>
         <tr>
@@ -45,6 +46,29 @@
       </tbody>
     </table>
     <button type="button" class="btn btn-success"><%= link_to "編集", edit_goal_path(@goal), {:class => "href-btn"} %></button>
+    <% else %>
+    <table class="table table-bordered table-profile">
+      <tbody>
+        <tr>
+          <th class="table-header col-xs-4 text-center">達成予定日</th>
+          <td class="table-body col-xs-8"></td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">目標体重</th>
+          <td class="table-body col-xs-8"></td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">目標摂取プロテイン（1日分）</th>
+          <td class="table-body col-xs-8"></td>
+        </tr>
+        <tr>
+          <th class="table-header col-xs-4 text-center">メモ</th>
+          <td class="table-body col-xs-8"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-defalut set-goal"><%= link_to "目標を設定する",new_goal_path %></button> 
+    <% end %>
   </div>
 </div>
 <h1 class="head-line">退会</h1>

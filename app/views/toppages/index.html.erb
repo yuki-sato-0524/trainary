@@ -8,7 +8,9 @@
         <div class="panel-heading">
           <h2 class="text-center">前回の記録</h2>
         </div>
+        <% if @diary_last %>
         <div class="panel-body">
+          
           <div>
             <h4>日付</h4>
             <p><%= @diary_last.month %>月<%= @diary_last.date %>日</p>
@@ -26,11 +28,22 @@
             <p><%= @diary_last.protein %>g</p>
           </div>
           
+          
         </div>
         <div style="margin-bottom:8px; margin-left:8px;">
           <button type="button" class="btn btn-success"><%= link_to "編集", edit_diary_path(@diary_last),:class => "href-btn" %></button>
           <button type="button" class="btn btn-danger"><%= link_to "削除", diary_path(@diary_last), method: :delete, :class => "href-btn", data: {confirm: "削除してもよろしいですか？？"} %></button>
         </div>
+        <% else %>
+        <div class="panel-body">
+          <div class="well text-center" style="padding:50px 10px; font-size:18px; color:#fff; margin-bottom:0;">
+        
+            <p style="font-size:14px; color:#333">早速今日のトレー二ングを</br>記録してみよう！！</br>➡️➡️➡️➡️➡️➡️➡️</p>
+            
+            </div>
+        </div>
+       
+        <% end %>
       </div>
     </div>
     
