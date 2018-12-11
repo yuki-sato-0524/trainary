@@ -222,6 +222,40 @@ a {
   color:#0084f5;
 }
 
-.navbar-toggle, .icon-bar{
-  color:#fff;
+.navbar-extend .navbar-header span{
+  color: #0084f5;
+}
+.navbar-extend .navbar-header button{
+  margin: 8px;
+  padding:9px;
+}
+
+
+
+/* メディアクリエ */
+@media only screen and (max-width: 736px){
+  
+  /*body{
+    line-height: 0;
+  }*/
+  
+  h1, h2, h3, h4{
+    font-size:16px;
+  }
+  
+  .panel-body p {
+    color: rgb(100, 100, 100);
+    font-size: 14px;
+  }
+  
+  .panel-heading h2{
+    margin:0;
+  }
+  .navbar-extend{
+    margin-bottom:0;
+  }
+  
+  #open-modal-diary{
+    display:none;
+  }
 }
