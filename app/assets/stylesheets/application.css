@@ -22,7 +22,12 @@
  a:hover{
   color: #fff;  
 }
-
+footer {
+  margin-top:20px;
+  padding-top: 20px;
+  padding-bottom:10px;
+  background-color:rgb(235,235,235);
+}
 .container {
     width: 90%;
 }
@@ -284,11 +289,8 @@ a {
     width: 91%;
   }
   
-  .edit-goals{
-    width:100%;
-  }
   .container {
-    width: 100%;
+    width: 95%;
   }
   
 }
