@@ -85,6 +85,15 @@ footer {
   margin:0;
 }
 
+.col-form{
+  padding-left:0;
+  padding-right:0;
+}
+
+.col-input{
+  padding-left:5px;
+}
+
 .panel-body p{
   color:rgb(100, 100, 100);
   font-size:16px;

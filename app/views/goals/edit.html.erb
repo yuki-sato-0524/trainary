@@ -1,5 +1,5 @@
 <h1 class="head-line">目標の編集</h1>
-<div class="col-sm-offset-2 col-sm-8">
+<div class="col-sm-offset-2 col-sm-8 edit-goals">
   <div class="panel panel-success">
     <div class="panel-heading">
       <h1 class="text-center">目標設定</h1>
@@ -9,20 +9,20 @@
       <%= form_for @goal, :html => {:class => "form-horizontal"} do |f| %>
         <div class="form-group">
           <label class="control-label col-xs-3">達成予定日</label>
-          <div class="col-xs-3">
-            <%= f.number_field :year, class: "form-control col-xs-3"%>
+          <div class="col-xs-3 col-form">
+            <%= f.number_field :year, class: "form-control col-xs-3 col-input"%>
           </div>
           <div class="col-xs-1 col-div">
             <p>年</p>
           </div>
-          <div class="col-xs-2">
-            <%= f.number_field :month, class: "form-control col-xs-3"%>
+          <div class="col-xs-2 col-form">
+            <%= f.number_field :month, class: "form-control col-xs-3 col-input"%>
           </div>
           <div class="col-xs-1 col-div">
             <p>月</p>
           </div>
-          <div class="col-xs-2">
-            <%= f.number_field :date, class: "form-control col-xs-3"%>
+          <div class="col-xs-2 col-form">
+            <%= f.number_field :date, class: "form-control col-xs-3 col-input"%>
           </div>
           
         </div>
