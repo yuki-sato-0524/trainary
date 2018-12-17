@@ -156,6 +156,7 @@
 <% else %>
 
   <% content_for :cover do %>
+  <div class="top-bg">
     <div class="center jumbotron jumbotron-extend">
       <div class="text-center container">
         <h1>Welcome to the <span>Trainary</span></h1>
@@ -192,7 +193,10 @@
             
             <p class="text-center">アカウントをお持ちの方は → <%= link_to "ログインする", login_path %></p>
           </div>
+        </div>
       </div>
     </div>
+  </div>
+    
   <% end %>
 <% end %>

@@ -14,10 +14,16 @@
  *= require_self
  */
  
+ 
  body{
-   background-color: #edf9ff;
+   background:linear-gradient( #edf9ff00, #16eefb8a);
    font-family: 'Kosugi Maru', sans-serif;
  }
+ 
+a {
+    color: #0084f5;
+    text-decoration: none;
+}
  
  a:hover{
   color: #fff;  
@@ -26,7 +32,7 @@ footer {
   margin-top:20px;
   padding-top: 20px;
   padding-bottom:10px;
-  background-color:rgb(235,235,235);
+  background-color:rgba(235,235,235, 0.4);
 }
 .container {
     width: 90%;
@@ -42,21 +48,38 @@ footer {
   padding-bottom:8px;
   margin-bottom: 20px;
 }
+.top-bg{
+  background: url("/toppage.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  height:100%;
+}
+.top-bg::before{
+  background-color: rgba(0,0,255,0.2);
+  position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	content: ' ';
+}
 
 .jumbotron-extend{
   position:relative;
   height:100vh;
-  background: url("/toppage.jpg") no-repeat center center;
-  background-size: cover;
+  
   margin-top:0;
+  background-color: transparent;
   
 }
-
+/* toppage */
 .jumbotron-extend h1{
   font-family: 'Ubuntu', sans-serif;
   font-size:100px;
   color: #e3fdff;
   border-bottom: solid 10px #ffd17c;
+  text-shadow:2px 2px 10px #000;
+    box-shadow:0px 2px orange;
 }
 
 .jumbotron-extend p{
@@ -71,6 +94,8 @@ footer {
   border-color: white;
   margin-top: 40px;
 }
+
+/* form周りの調整*/
 .col-div {
   padding-left:0;
 }
@@ -156,15 +181,12 @@ footer {
 .navbar-nav a{
   font-family: 'Kosugi Maru', sans-serif;
 }
-a {
-    color: #0084f5;
-    text-decoration: none;
-}
+
 /* flash */
 .fade-out-flash{
   position:absolute;
   top:63px;
-  width:80%;
+  width:90%;
   margin: auto;
   z-index:10000;
   opacity:1;
@@ -250,6 +272,72 @@ a {
   padding:9px;
 }
 
+/* 掲示板 */
+
+.boards a{
+  color:#000;
+  text-decoration:none;
+}
+
+.board-box{
+  height:150px; 
+  background:#fff; 
+  margin-bottom:10px; 
+  border: solid 1px silver;
+  border-radius: 5px;
+  position:relative;
+}
+
+.board-box h3{
+  padding:15px; 
+  padding-bottom:0; 
+  margin:0;
+}
+.board-box p{
+  padding:0 15px; 
+  margin:0 30px 20px 30px;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+}
+
+.board-box .time-ago{
+  margin:0;
+  padding:0;
+  color:rgba(150, 150, 150, 0.9); 
+  position:absolute;
+  bottom:5px;
+  right:15px;
+}
+
+
+
+.board-more-box{
+  background:#fff; 
+  margin-bottom:10px; 
+  border: solid 1px silver;
+  border-radius: 10px;
+  position:relative;
+}
+
+.board-more-box h3{
+  padding:15px; 
+  padding-bottom:0; 
+  margin:0;
+}
+.board-more-box p{
+  padding:0 15px; 
+  margin:0 30px 20px 30px;
+}
+.board-more-box .time-ago{
+  margin:0;
+  padding:0;
+  color:rgba(150, 150, 150, 0.9); 
+  position:absolute;
+  top:15px;
+  right:15px;
+}
 
 
 /* メディアクリエ */
@@ -281,7 +369,7 @@ a {
   .jumbotron-extend h1 {
     font-size: 40px;
     border-bottom: solid 6px #ffd17c;
-    text-shadow:2px 2px 2px #000;
+    text-shadow:2px 2px 10px #000;
     box-shadow:0px 2px orange;
   }
   .jumbotron-extend h1 span{

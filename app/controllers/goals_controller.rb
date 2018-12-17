@@ -1,4 +1,7 @@
 class GoalsController < ApplicationController
+  before_action :require_user_logged_in
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  
   def new
     @goal = current_user.goals.build
   end
@@ -34,5 +37,11 @@ class GoalsController < ApplicationController
   private 
   def goal_params
     params.require(:goal).permit(:goal_weight, :goal_protein, :goal_memo, :year, :month, :date)
+  end
+  
+  def correct_user
+    @goal = current_user.goals.find(params[:id])
+    
+    redirect_to root_path unless @goal
   end
 end

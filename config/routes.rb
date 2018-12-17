@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   
   resources :goals, :only =>[:new, :create, :edit, :update]
   
+  resources :boards, :only =>[:new, :create, :destroy, :index, :show] do
+    member do
+      get :favorites
+    end
+  end
+  resources :favorites, :only =>[:create, :destroy]
   
   
 end

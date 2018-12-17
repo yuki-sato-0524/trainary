@@ -1,0 +1,20 @@
+<h1 class="head-line">掲示板一覧   <button class="btn" style="border:solid 2px blue;"><%= link_to "投稿する", new_board_path %></button></h1>
+
+<div class="row">
+  
+  <% @boards.each do |board| %>
+  <div class="col-sm-offset-2 col-sm-8 boards">
+    <%= link_to(board_path(board)) do %>
+    <div class="board-box">
+      <h3><%= board.title %></h3></br>
+      <p><%= board.content  %></p>
+      <p class="time-ago"><%= time_ago_in_words(board.created_at) %></p>
+    </div>
+    <% end%>
+  </div>
+  <% end %>
+</div>
+
+<div class="text-center" style="margin-top:30px;">
+  <%= paginate @boards %>
+</div>

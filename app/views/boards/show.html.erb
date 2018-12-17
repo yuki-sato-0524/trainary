@@ -1,0 +1,9 @@
+<h1 class="head-line">掲示板詳細</h1>
+<div class="col-sm-offset-2 col-sm-8 boards">
+    
+    <div class="board-more-box">
+      <h3><%= @board.title %></h3></br>
+      <p><%= simple_format(@board.content) %></p>
+      <p class="time-ago"><%= time_ago_in_words(@board.created_at) %></p>
+    </div>
+  </div>
