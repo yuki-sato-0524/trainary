@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-static-top navbar-extend">
-    <div class="container-nav">
+    <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -14,6 +14,7 @@
           <li><%= link_to(root_path) do %><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home<% end %></li>
           <li><%= link_to(diaries_path(current_user)) do %><span class="glyphicon glyphicon-book" aria-hidden="true"></span> 過去のログ<% end %></li>
           <li><%= link_to(analysis_path(current_user)) do %><span class="glyphicon glyphicon-signal" aria-hidden="true"></span> 分析<% end %></li>
+          <li><%= link_to(boards_path) do %><i class="fas fa-comment"></i> 掲示板<% end %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> 

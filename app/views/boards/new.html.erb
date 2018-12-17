@@ -1,0 +1,35 @@
+<h1 class="head-line">掲示板投稿作成</h1>
+<div class="col-sm-offset-2 col-sm-8">
+      <div class="panel panel-info panel-form">
+        <div class="panel-heading">
+          <h2 class="text-center">掲示板投稿</h1>
+        </div>
+        <div class="panel-body">
+        
+          <%= form_for @board, :html => {:class => "form-horizontal"} do |f| %>
+          <div class="form-group">
+              <%= f.label :title, "タイトル", class: "control-label col-xs-2" %>
+              <div class="col-xs-9">
+                <%= f.text_field :title, class: "form-control" %>
+              </div>
+              
+            </div>
+            <div class="form-group col-xs-12">
+              <%= f.label :title, "内容", class: "control-label col-xs-2" %>
+              <div class="col-xs-9">
+                <%= f.text_area :content, class:"form-control", placeholder: "", rows: 20 %>
+              </div>
+              
+            </div>
+            
+            <div>
+              <%= f.submit "投稿する！", class: "btn btn-block btn-extend", id:"form-btn-fix"%>
+            </div>
+            
+            
+          <% end %>
+        </div>
+      
+      </div>
+      
+    </div>

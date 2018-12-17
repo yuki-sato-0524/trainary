@@ -1,32 +1,34 @@
 <% content_for :cover do %>
-    <div class="center jumbotron jumbotron-extend">
-      <div class="text-center container">
-        <h1>Welcome to the Trainary</h1>
-      </div>
-      <div class="container">
-        <%= render 'layouts/flash_messages' %>
-      </div>
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-          <div class="well well-blue">
-            <%= form_for(:session, url: login_path) do |f| %>
-            
-              <div class="form-group">
-                <%= f.email_field :email, class: 'form-control text-size-16', placeholder: "メールアドレス" %>
-              </div>
-        
-              <div class="form-group">
-                <%= f.password_field :password, class: 'form-control text-size-16',  placeholder: "パスワード" %>
-              </div>
-              
-              <%= f.submit 'ログインする', class: 'btn btn-primary btn-block text-size-16 btn-extend' %>
-            <% end %>
-          </div>
-          
-          <div class="well well-blue">
-            
-            <p class="text-center">アカウントをお持ちではないですか？<%= link_to "新規登録する", root_path %></p>
-          </div>
-      </div>
+<div class="top-bg">
+  <div class="center jumbotron jumbotron-extend">
+    <div class="text-center container">
+      <h1>Welcome to the Trainary</h1>
     </div>
-  <% end %>
+    <div class="container">
+      <%= render 'layouts/flash_messages' %>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="well well-blue">
+          <%= form_for(:session, url: login_path) do |f| %>
+          
+            <div class="form-group">
+              <%= f.email_field :email, class: 'form-control text-size-16', placeholder: "メールアドレス" %>
+            </div>
+      
+            <div class="form-group">
+              <%= f.password_field :password, class: 'form-control text-size-16',  placeholder: "パスワード" %>
+            </div>
+            
+            <%= f.submit 'ログインする', class: 'btn btn-primary btn-block text-size-16 btn-extend' %>
+          <% end %>
+        </div>
+        
+        <div class="well well-blue">
+          
+          <p class="text-center">アカウントをお持ちではないですか？<%= link_to "新規登録する", root_path %></p>
+        </div>
+    </div>
+  </div>
+</div>
+<% end %>
