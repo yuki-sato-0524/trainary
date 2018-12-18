@@ -11,6 +11,7 @@
       <p class="time-ago"><%= time_ago_in_words(board.created_at) %></p>
     </div>
     <% end%>
+    <%= render "favorites/like_button", board: board %>
   </div>
   <% end %>
 <% end %>

@@ -14,16 +14,24 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :likes ,through: :favorites, source: :board
   
-  def likes(board)
+  def like(board)
     self.favorites.find_or_create_by(board_id: board.id)
   end
   
   def unlike(board)
-    relationship = self.favorites.find(board.id)
+    relationship = self.favorites.find_by(board_id: board.id)
     relationship.destroy if relationship
   end
   
-  def like?(board)
-    self.favorites.include?(board)
+  
+  def liked_it?(board)
+    
+    
+    if self.favorites.find_by(board_id: board.id)
+      return true
+    else
+      return false
+    end
+    
   end
 end

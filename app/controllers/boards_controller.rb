@@ -14,7 +14,7 @@ class BoardsController < ApplicationController
     
     if @board.save
       flash[:success] = "投稿しました"
-      redirect_to root_path
+      redirect_to boards_path
     else
       flash.now[:danger] = "失敗しました"
       render :new

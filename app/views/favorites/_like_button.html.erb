@@ -1,0 +1,26 @@
+<% if current_user.liked_it?(board) %>
+
+  <!-- likeしている時＝unlikeボタン出現　-->
+  <%= form_for(current_user.favorites.find_by(board_id: board.id), html: {method: "delete"}) do |f| %>
+    <%= hidden_field_tag :board_id, board.id %>
+    <%= button_tag(type: "submit", class:"btn btn-warning") do %>
+      <i class="fas fa-thumbs-up"></i>
+    <% end %>
+  <% end %>
+
+
+<% else %>
+
+<!-- likeしてない時＝likeボタン出現　-->
+  <%= form_for(current_user.favorites.build) do |f|%>
+    <%= hidden_field_tag :board_id, board.id %>
+    <%= button_tag(type: "submit", class:"btn btn-defalt") do %>
+      <i class="fas fa-thumbs-up"></i>
+    <% end %>
+  <% end %>
+  
+  
+  
+<% end %>
+
+<!-- 送信するものはboardのidだけ-->
