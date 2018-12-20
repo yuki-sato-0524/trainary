@@ -185,6 +185,7 @@ footer {
 /* flash */
 .fade-out-flash{
   position:absolute;
+  /*background: radial-gradient(#fff, #dff0d8);*/
   top:63px;
   width:90%;
   margin: auto;
