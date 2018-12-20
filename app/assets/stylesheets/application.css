@@ -283,7 +283,7 @@ footer {
 .board-box{
   height:150px; 
   background:#fff; 
-  margin-bottom:10px; 
+  margin-bottom:3px; 
   border: solid 1px silver;
   border-radius: 5px;
   position:relative;
@@ -340,6 +340,11 @@ footer {
   right:15px;
 }
 
+.like_board_btn{
+  margin-bottom:10px;
+  padding: 2px 12px 4px 12px;
+}
+
 
 /* メディアクリエ */
 @media only screen and (max-width: 736px){
@@ -384,6 +389,10 @@ footer {
   
   .container {
     width: 95%;
+  }
+  
+  .container-padding{
+    padding: 0;
   }
   
 }

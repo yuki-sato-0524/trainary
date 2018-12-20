@@ -30,7 +30,7 @@
     
     <%= yield :cover %>
     
-    <div class="container">
+    <div class="container container-padding">
     <% if logged_in? %>
       <%= render 'layouts/flash_messages' %>
       <%= render "diaries/new_diary", diary: current_user.diaries.build %>
