@@ -5,8 +5,11 @@ class ToppagesController < ApplicationController
       @diary_last = @user.diaries.last
       @diary = @user.diaries.build
       @goal = @user.goals.last
+      
     else
       @user = User.new
     end
   end
+  
+
 end

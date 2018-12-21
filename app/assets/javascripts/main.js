@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  
+  "use strict";
+  
+  //flash関連
    var fadeOutFlash = function(){
       $(".fade-out-flash").fadeOut();
     };
@@ -20,59 +24,33 @@ $(document).ready(function() {
       $("#mask").click()
     });
     
-    function checkHalfWidthDigit(a,b,c){
-      $(a).keyup(function(){
-      var input = $(this).val();
+    
+    //日付(失敗)
+    var today, this_month, this_day, optionLoop;
+    
+    today = new Date();
+    this_month = today.getMonth();
+    this_day = today.getDate();
+    
+    optionLoop = function(start, end, id, this_day){
+      var i, option;
+      option = null;
       
-      if( input.match( /[^0-9.,-]+/ ) ) {
-        $(b).removeClass("error-inactive");
-        $(c).prop('disabled',true);
-      }else{
-        $(b).addClass("error-inactive");
-        $(c).prop('disabled',false);
+      for(i=start; i<=end; i++){
+        if (i == this_day){
+          option+= "<option value='"+ i + "' selected>"+ i +"</option>";
+        }else{
+           option+= "<option value='"+ i + "'>"+ i +"</option>";
+        }
+        
+        return document.getElementById(id).innerHTML = option;
       }
-      });
-    }
+    };
     
-    checkHalfWidthDigit("#form-weight","#num-error-w","#form-btn");
-    checkHalfWidthDigit("#form-protein","#num-error-p","#form-btn");
-    checkHalfWidthDigit("#form-weight-fix","#num-error-w-fix","#form-btn-fix");
-    checkHalfWidthDigit("#form-protein-fix","#num-error-p-fix","#form-btn-fix");
+    optionLoop(1, 12, "id_month", this_month);
+    optionLoop(1, 31, "id_day", this_day);
     
-   /*function checkInput(){
-     var inputWeight = $("#form-weight").val();
-     var inputProtein = $("form-protein").val();
-      
-     if( inputWeight.match( /[^0-9.,-]+/ ) &&
-         inputProtein.match( /[^0-9.,-]+/ )
-     ) {
-       $("#form-btn").prop('disabled',true);
-     }else{
-       $("#form-btn").prop('disabled',false);
-     }
-   }*/
-      
-    $("#form-weight").keyup(function(){
-      var inputWeight = $("#form-weight").val();
-      var inputProtein = $("form-protein").val();
-      
-     if( inputWeight.match( /[^0-9.,-]+/ ) && inputProtein.match( /[^0-9.,-]+/ )) {
-       $("#form-btn").prop('disabled',true);
-     }else{
-       $("#form-btn").prop('disabled',false);
-     }
-    });
     
-    $("#form-protein").keyup(function(){
-     var inputWeight = $("#form-weight").val();
-     var inputProtein = $("form-protein").val();
-      
-     if( inputProtein.match( /[^0-9.,-]+/ )) {
-       $("#form-btn").prop('disabled',true);
-     }else{
-       $("#form-btn").prop('disabled',false);
-     }
-    });
       
     
 });
