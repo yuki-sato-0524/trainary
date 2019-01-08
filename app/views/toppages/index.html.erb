@@ -15,9 +15,10 @@
             <h4>日付</h4>
             <p><%= @diary_last.month %>月<%= @diary_last.date %>日</p>
           </div>
-          <div>
+          <div class="ellipsis">
             <h4>記録内容</h4>
-            <p><%= simple_format(@diary_last.content) %></p>
+            <%= simple_format(@diary_last.content) %>
+            <span id="read-more" class="read-more">more</span>
           </div>
           <div>
             <h4>体重</h4>

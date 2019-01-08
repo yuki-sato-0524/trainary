@@ -39,7 +39,7 @@ class BoardsController < ApplicationController
 private 
   
   def board_params
-    params.require(:board).permit(:content, :title)
+    params.require(:board).permit(:content, :title, :image)
   end
   
   def correct_user

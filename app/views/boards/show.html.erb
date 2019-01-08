@@ -4,6 +4,7 @@
     <div class="board-more-box">
       <h3><%= @board.title %></h3></br>
       <p><%= simple_format(@board.content) %></p>
+      <%= image_tag @board.image if @board.image.attached? %>
       <p class="time-ago"><%= time_ago_in_words(@board.created_at) %></p>
     </div>
   </div>

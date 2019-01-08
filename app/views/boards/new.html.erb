@@ -20,7 +20,12 @@
               <div class="col-xs-9 container-padding">
                 <%= f.text_area :content, class:"form-control", placeholder: "", rows: 20 %>
               </div>
-              
+            </div>
+            <div class="form-group">
+              <%= f.label :image, "画像", class:"control-laabel col-xs-2 container-padding" %>
+              <div class="col-xs-9 container-padding">
+                <%= f.file_field :image %>
+              </div>
             </div>
             
             <div>

@@ -16,7 +16,7 @@
  
  
  body{
-   background:linear-gradient( #edf9ff00, #16eefb8a);
+   background:linear-gradient(45deg, blue, aqua 25% 70%, blue);
    font-family: 'Kosugi Maru', sans-serif;
  }
  
@@ -393,6 +393,25 @@ footer {
   
   .container-padding{
     padding: 0;
+  }
+  
+  .ellipsis p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  
+  .read-more{
+    color:rgba(100, 100, 100, 0.5); 
+    text-align:right; 
+    display:block; 
+    cursor:pointer;
+    /*クリックでhide()させる。activeクラスを付与する。*/
+  }
+  
+  .read-more-active{
+    display:block;
   }
   
 }

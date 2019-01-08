@@ -3,7 +3,8 @@ class DiariesController < ApplicationController
   before_action :correct_user, only:[:edit, :update, :destroy]
   
   def index
-    @diaries = current_user.diaries.all.order("created_at DESC").page(params[:page]).per(3)
+    @q = current_user.diaries.ransack(params[:q])
+    @diaries = @q.result(distinct: true).order("created_at DESC").page(params[:page]).per(3)
   end
   
   def analysis
